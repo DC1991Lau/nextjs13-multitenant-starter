@@ -1,4 +1,13 @@
+import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
+import Providers from "@/components/providers/Providers";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata = {
   title: "Nextjs Multitenant - Starter Kit",
@@ -11,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={cn("text-slate-900", poppins.className)}>
+      <body className="h-screen w-screen overflow-x-hidden flex flex-col">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

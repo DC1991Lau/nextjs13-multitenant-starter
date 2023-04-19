@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { FC } from "react";
 
 interface DashboardLayoutProps {
@@ -5,7 +6,12 @@ interface DashboardLayoutProps {
 }
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
-  return <div>{children}</div>;
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  );
 };
 
 export default DashboardLayout;
